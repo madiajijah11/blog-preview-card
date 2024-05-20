@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Blog preview card</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      body {
+        background-color: #f4d04e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      .container,
+      .container * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        flex-shrink: 0;
+        text-decoration: none;
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .container,
+      .container :not(span, a, ul, ol, li, p) {
+        display: flex;
+      }
+
+      .container ul,
+      .container ol {
+        text-indent: 0;
+        padding-inline-start: 1.5em;
+      }
+
+      .container p:empty::before {
+        content: "";
+        display: inline-block;
+      }
+
+      .container img {
+        object-fit: contain;
+      }
+
+      .container svg {
+        overflow: visible;
+      }
+
+      .card {
+        width: 384px;
+        height: min-content;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px;
+        outline: solid 1px #111;
+        outline-offset: -1px;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 8px 8px 0px 0px #000;
+      }
+
+      .blogimage {
+        z-index: 0;
+        height: 200px;
+        align-self: stretch;
+      }
+
+      .icon {
+        width: 100%;
+        height: 100%;
+      }
+
+      .content {
+        z-index: 0;
+        height: min-content;
+        align-self: stretch;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .category {
+        width: min-content;
+        height: min-content;
+        padding: 4px 12px;
+        border-radius: 4px;
+        background-color: #f4d04e;
+      }
+
+      .learning {
+        color: #111;
+        font-size: 14px;
+        line-height: 150%;
+        font-weight: 800;
+        font-family: Figtree, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        width: min-content;
+        height: min-content;
+        white-space: nowrap;
+        flex-direction: column;
+      }
+
+      .publishdate {
+        color: #111;
+        font-size: 14px;
+        line-height: 150%;
+        font-weight: 500;
+        font-family: Figtree, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        width: min-content;
+        height: min-content;
+        white-space: nowrap;
+        flex-direction: column;
+      }
+
+      .title {
+        color: #111;
+        font-size: 24px;
+        line-height: 150%;
+        font-weight: 800;
+        font-family: Figtree, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        height: min-content;
+        align-self: stretch;
+        flex-direction: column;
+      }
+
+      .description {
+        color: #7f7f7f;
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 500;
+        font-family: Figtree, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        height: min-content;
+        align-self: stretch;
+        flex-direction: column;
+      }
+
+      .author {
+        z-index: 0;
+        width: min-content;
+        height: min-content;
+        align-items: center;
+        gap: 12px;
+      }
+      .userpic {
+        width: 32px;
+        height: 32px;
+        overflow: visible;
+      }
+
+      .icon2 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .authorname {
+        color: #111;
+        font-size: 14px;
+        line-height: 150%;
+        font-weight: 800;
+        font-family: Figtree, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        width: min-content;
+        height: min-content;
+        white-space: nowrap;
+        flex-direction: column;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <div class="container">
+      <div class="card">
+        <div class="blogimage">
+          <img
+            src="/assets/images/illustration-article.svg"
+            alt="illustration-image"
+            class="icon"
+          />
+        </div>
+
+        <div class="content">
+          <div class="category">
+            <div class="learning">Learning</div>
+          </div>
+          <div class="publishdate">Published 21 Dec 2023</div>
+          <div class="title" id="title">HTML &amp; CSS foundations</div>
+          <div class="description">
+            These languages aret he backbone of every websitem defining
+            structure, content, and presentation.
+          </div>
+        </div>
+
+        <div class="author">
+          <div class="userpic">
+            <img
+              class="icon2"
+              src="/assets/images/image-avatar.webp"
+              alt="Greg Hooper"
+            />
+          </div>
+          <div class="authorname">Greg Hooper</div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.github.com/madiajijah11" target="_blank"
+        >Dian Rahmadani</a
+      >.
+    </div>
+  </body>
+  <script>
+    const title = document.getElementById("title");
+    // when mouse is over the title, change the title color and pointer cursor, and reset the title color when the mouse is out
+    title.addEventListener("mouseover", () => {
+      title.style.color = "#f4d04e";
+      title.style.cursor = "pointer";
+    });
+    title.addEventListener("mouseout", () => {
+      title.style.color = "#111";
+    });
+  </script>
+</html>
